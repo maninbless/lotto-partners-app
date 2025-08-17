@@ -1,7 +1,8 @@
 
+
 import React, { useState, useCallback, useMemo } from 'react';
 import ReactDOM from 'react-dom/client';
-import type { Type } from "@google/genai";
+import { Type } from "@google/genai";
 
 type Tab = 'lotto' | 'stock' | 'coupang';
 type Deal = { name: string; description: string };
@@ -192,12 +193,12 @@ const App = () => {
                     config: {
                         responseMimeType: "application/json",
                         responseSchema: {
-                            type: 'ARRAY',
+                            type: Type.ARRAY,
                             items: {
-                                type: 'OBJECT',
+                                type: Type.OBJECT,
                                 properties: {
-                                    name: { type: 'STRING', description: '상품 이름' },
-                                    description: { type: 'STRING', description: '상품에 대한 짧은 설명' },
+                                    name: { type: Type.STRING, description: '상품 이름' },
+                                    description: { type: Type.STRING, description: '상품에 대한 짧은 설명' },
                                 },
                                 required: ["name", "description"]
                             },
