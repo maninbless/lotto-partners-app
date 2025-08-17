@@ -1,0 +1,12 @@
+{
+  "name": "lotto-partners-app",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "@google/genai": "^1.14.0"
+  },
+  "devDependencies": {
+    "@netlify/functions": "^2.7.0",
+    "typescript": "^5.4.5"
+  }
+}

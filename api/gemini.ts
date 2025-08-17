@@ -1,5 +1,5 @@
-
 import { GoogleGenAI } from "@google/genai";
+import type { Handler, HandlerEvent } from "@netlify/functions";
 
 // API 키는 Netlify 환경 변수에서 안전하게 가져옵니다.
 const API_KEY = process.env.API_KEY;
@@ -9,8 +9,16 @@ if (!API_KEY) {
 const ai = new GoogleGenAI({ apiKey: API_KEY });
 const model = "gemini-2.5-flash";
 
-export const handler = async (event: { body: string }) => {
+export const handler: Handler = async (event: HandlerEvent) => {
   try {
+    // 요청 본문이 없는 경우를 처리합니다.
+    if (!event.body) {
+      return {
+        statusCode: 400,
+        body: JSON.stringify({ error: "Request body is missing" }),
+      };
+    }
+
     // 프론트엔드에서 보낸 요청 본문을 파싱합니다.
     const { contents, config } = JSON.parse(event.body);
 
