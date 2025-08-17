@@ -1,0 +1,24 @@
+
+{
+  "short_name": "로또 파트너스",
+  "name": "로또 주식 파트너스",
+  "description": "로또 번호 생성, 주식 정보, 쿠팡 추천을 한번에!",
+  "icons": [
+    {
+      "src": "/icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F2F2F7",
+  "theme_color": "#5E5CE6"
+}

@@ -1,0 +1,300 @@
+
+:root {
+    --primary-color: #5E5CE6;
+    --secondary-color: #007AFF;
+    --background-color: #F2F2F7;
+    --card-background: #FFFFFF;
+    --text-color: #1D1D1F;
+    --subtle-text-color: #6E6E73;
+    --border-color: #E5E5EA;
+    --lotto-ball-bg: linear-gradient(135deg, #FFD700, #FFA500);
+    --stock-accent: #34C759;
+    --coupang-accent: #FF9500;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    -webkit-tap-highlight-color: transparent;
+}
+
+#app {
+    max-width: 420px;
+    margin: 0 auto;
+    min-height: 100vh;
+    background-color: var(--card-background);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.header {
+    padding: 16px 20px;
+    text-align: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    background: var(--card-background);
+}
+
+.disclosure-notice {
+    padding: 8px 16px;
+    background-color: #FFF0F0;
+    color: #D32F2F;
+    text-align: center;
+    font-size: 0.8rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+.coupang-ad-banner {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--background-color);
+    border-bottom: 1px solid var(--border-color);
+    overflow: hidden;
+}
+
+.content {
+    flex-grow: 1;
+    padding: 24px 20px;
+    overflow-y: auto;
+}
+
+.tab-content {
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.lotto-container, .stock-container, .coupang-container {
+    text-align: center;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 24px;
+    color: var(--text-color);
+}
+
+.lotto-balls {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin: 32px 0;
+    min-height: 50px;
+}
+
+.lotto-ball {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--lotto-ball-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: white;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    animation: popIn 0.5s ease-out forwards;
+}
+
+@keyframes popIn {
+    from { transform: scale(0.5); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.lotto-ball:nth-child(2) { animation-delay: 0.1s; }
+.lotto-ball:nth-child(3) { animation-delay: 0.2s; }
+.lotto-ball:nth-child(4) { animation-delay: 0.3s; }
+.lotto-ball:nth-child(5) { animation-delay: 0.4s; }
+.lotto-ball:nth-child(6) { animation-delay: 0.5s; }
+
+.action-button {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: white;
+    transition: background-color 0.2s, transform 0.1s;
+}
+
+.action-button:disabled {
+    background-color: #BDBDBD;
+    cursor: not-allowed;
+}
+
+.action-button:hover:not(:disabled) {
+    background-color: #4B4ACD;
+}
+
+.action-button:active:not(:disabled) {
+    transform: scale(0.98);
+}
+
+.stock-form {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+.stock-input {
+    flex-grow: 1;
+    padding: 12px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.stock-input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(94, 92, 230, 0.2);
+}
+
+.stock-submit {
+    padding: 0 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    background-color: var(--stock-accent);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+.stock-submit:hover {
+    background-color: #2E9A49;
+}
+
+
+.stock-response, .recommendation-container {
+    margin-top: 24px;
+    text-align: left;
+    background-color: var(--background-color);
+    padding: 16px;
+    border-radius: 12px;
+    min-height: 100px;
+}
+
+.stock-response p {
+    white-space: pre-wrap;
+    line-height: 1.6;
+    color: var(--subtle-text-color);
+}
+
+.recommendation-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.recommendation-title .icon {
+    color: var(--coupang-accent);
+}
+
+.deal-card {
+    background-color: var(--card-background);
+    border-radius: 12px;
+    padding: 16px;
+    margin-bottom: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    transition: transform 0.2s;
+    cursor: pointer;
+}
+
+.deal-card:hover {
+    transform: translateY(-4px);
+}
+
+.deal-name {
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.deal-description {
+    font-size: 0.9rem;
+    color: var(--subtle-text-color);
+    line-height: 1.5;
+}
+
+.loading-spinner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border-left-color: var(--primary-color);
+    animation: spin 1s ease infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    color: var(--subtle-text-color);
+    margin-top: 16px;
+}
+
+.nav {
+    display: flex;
+    border-top: 1px solid var(--border-color);
+    background-color: var(--card-background);
+    padding: 8px 0;
+}
+
+.nav-item {
+    flex: 1;
+    text-align: center;
+    padding: 10px 0;
+    cursor: pointer;
+    color: var(--subtle-text-color);
+    transition: color 0.2s, background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+}
+
+.nav-item.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.nav-item svg {
+    width: 24px;
+    height: 24px;
+}

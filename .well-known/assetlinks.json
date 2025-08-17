@@ -1,0 +1,10 @@
+
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.example.lottopartners",
+    "sha256_cert_fingerprints":
+    ["FA:C6:17:45:24:07:02:85:91:39:78:23:4B:50:6C:AC:4F:9C:6C:5F:54:19:B1:36:F2:B4:2B:DB:12:01:21:F8"]
+  }
+}
