@@ -1,2 +1,12 @@
-[build]
-  functions = "/.netlify/functions/gemini"
+# netlify.toml
+
+[functions]
+  # Netlify가 서버리스 함수를 찾을 디렉토리를 지정합니다.
+  directory = "netlify/functions"
+
+# 이 설정은 /api/ 로 시작하는 모든 요청을
+# /.netlify/functions/ 경로로 전달(rewrite)합니다.
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
